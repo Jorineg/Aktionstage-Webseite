@@ -239,7 +239,11 @@
         </div>
         <!-- Form -->
         <div class="reveal">
-          <form id="contact-form" class="space-y-4">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+            <input type="hidden" name="access_key" value="bcb90f79-3e46-4c15-9bdd-35147bb93b55">
+            <input type="hidden" name="subject" value="Neue Kontaktanfrage – Hochschultage Berlin">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
             <div>
               <label for="name" class="input-label text-white/80">{{contact_form_name}}</label>
               <input type="text" id="name" name="name" required class="input-field !bg-white/10 !border-white/20 !text-white !placeholder-white/40 focus:!ring-accent">
@@ -283,6 +287,7 @@
   {{> footer}}
 
   <script src="/js/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>

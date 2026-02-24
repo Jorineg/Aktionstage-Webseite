@@ -40,7 +40,11 @@
         <p class="text-gray-500">{{volunteer_reg_text}}</p>
       </div>
 
-      <form id="volunteer-form" class="space-y-5 reveal">
+      <form id="volunteer-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5 reveal">
+        <input type="hidden" name="access_key" value="bcb90f79-3e46-4c15-9bdd-35147bb93b55">
+        <input type="hidden" name="subject" value="Neue Mitarbeiter-Anmeldung – Hochschultage Berlin">
+        <input type="hidden" name="redirect" value="">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
             <label for="v-name" class="input-label">{{volunteer_form_name}}</label>
@@ -165,6 +169,7 @@
       }
     })();
   </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>

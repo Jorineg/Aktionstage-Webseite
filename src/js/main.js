@@ -49,23 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Contact form with success popup ---
-  const contactForm = document.getElementById('contact-form');
+  // --- Form submission via Web3Forms (AJAX to show popup instead of redirect) ---
   const popup = document.getElementById('success-popup');
   const popupClose = document.getElementById('popup-close');
   const popupOverlay = document.getElementById('popup-overlay');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // TODO: Replace with actual form submission (Formspree, serverless fn, etc.)
-      // For now, show success popup
-      if (popup) {
-        popup.classList.remove('hidden');
-        popup.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-    });
+  function showPopup() {
+    if (popup) {
+      popup.classList.remove('hidden');
+      popup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   function closePopup() {
@@ -76,24 +70,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '...';
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        form.reset();
+        showPopup();
+      } else {
+        console.error('Form error:', data);
+        submitBtn.textContent = originalText;
+      }
+    } catch (err) {
+      console.error('Submit failed:', err);
+      submitBtn.textContent = originalText;
+    } finally {
+      submitBtn.disabled = false;
+      if (submitBtn.textContent === '...') submitBtn.textContent = originalText;
+    }
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) contactForm.addEventListener('submit', handleFormSubmit);
+
+  const volunteerForm = document.getElementById('volunteer-form');
+  if (volunteerForm) volunteerForm.addEventListener('submit', handleFormSubmit);
+
   if (popupClose) popupClose.addEventListener('click', closePopup);
   if (popupOverlay) popupOverlay.addEventListener('click', closePopup);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePopup();
   });
-
-  // --- Volunteer form ---
-  const volunteerForm = document.getElementById('volunteer-form');
-  if (volunteerForm) {
-    volunteerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (popup) {
-        popup.classList.remove('hidden');
-        popup.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  }
 
   // --- Smooth reveal on scroll ---
   const reveals = document.querySelectorAll('.reveal');
