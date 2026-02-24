@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{volunteer_hero_title}} – {{meta_title}}</title>
+  <meta name="description" content="{{volunteer_hero_subtitle}}">
+  <link rel="canonical" href="https://aktionstage.berlin{{canonical}}">
+  {{alternate_links}}
+  <meta property="og:title" content="{{volunteer_hero_title}} – {{meta_title}}">
+  <meta property="og:description" content="{{volunteer_hero_subtitle}}">
+  <meta property="og:url" content="https://aktionstage.berlin{{canonical}}">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  {{> header}}
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-primary via-primary-light to-primary-dark overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <div class="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-1/4 -left-1/4 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative z-10 text-center px-4 md:px-8 max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">{{volunteer_hero_title}}</h1>
+      <p class="text-lg md:text-xl text-white/80">{{volunteer_hero_subtitle}}</p>
+    </div>
+  </section>
+
+  <!-- ==================== REGISTRATION FORM ==================== -->
+  <section id="anmeldung" class="section-padding bg-white">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">{{volunteer_reg_title}}</h2>
+        <p class="text-gray-500">{{volunteer_reg_text}}</p>
+      </div>
+
+      <form id="volunteer-form" class="space-y-5 reveal">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="v-name" class="input-label">{{volunteer_form_name}}</label>
+            <input type="text" id="v-name" name="name" required class="input-field">
+          </div>
+          <div>
+            <label for="v-email" class="input-label">{{volunteer_form_email}}</label>
+            <input type="email" id="v-email" name="email" required class="input-field">
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="v-phone" class="input-label">{{volunteer_form_phone}}</label>
+            <input type="tel" id="v-phone" name="phone" class="input-field">
+          </div>
+          <div>
+            <label for="v-church" class="input-label">{{volunteer_form_church}}</label>
+            <input type="text" id="v-church" name="church" class="input-field">
+          </div>
+        </div>
+        <div>
+          <label for="v-area" class="input-label">{{volunteer_form_area}}</label>
+          <select id="v-area" name="area" required class="input-field">
+            <!-- Options are injected based on the pipe-separated translation string -->
+          </select>
+        </div>
+        <div>
+          <label for="v-experience" class="input-label">{{volunteer_form_experience}}</label>
+          <textarea id="v-experience" name="experience" rows="3" class="input-field resize-none"></textarea>
+        </div>
+        <div>
+          <label for="v-notes" class="input-label">{{volunteer_form_notes}}</label>
+          <textarea id="v-notes" name="notes" rows="2" class="input-field resize-none"></textarea>
+        </div>
+        <p class="text-xs text-gray-400">{{volunteer_form_privacy}}</p>
+        <button type="submit" class="btn-primary w-full sm:w-auto">{{volunteer_form_submit}}</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== VOLUNTEER PROGRAM ==================== -->
+  <section class="section-padding bg-surface">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">{{volunteer_program_title}}</h2>
+        <p class="text-gray-500">{{volunteer_program_text}}</p>
+      </div>
+      <div class="space-y-4 reveal">
+        <div class="card flex items-start gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-accent font-bold text-sm">1</span>
+          </div>
+          <p class="text-gray-700">{{volunteer_program_item1}}</p>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-accent font-bold text-sm">2</span>
+          </div>
+          <p class="text-gray-700">{{volunteer_program_item2}}</p>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-accent font-bold text-sm">3</span>
+          </div>
+          <p class="text-gray-700">{{volunteer_program_item3}}</p>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-accent font-bold text-sm">4</span>
+          </div>
+          <p class="text-gray-700">{{volunteer_program_item4}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DONATION ==================== -->
+  <section class="section-padding bg-white">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">{{volunteer_donate_title}}</h2>
+      <p class="text-gray-500 mb-8 leading-relaxed">{{volunteer_donate_text}}</p>
+      <div class="bg-surface rounded-xl p-6 md:p-8 border border-gray-100 mb-8">
+        <p class="text-gray-600 text-sm leading-relaxed">{{volunteer_donate_details}}</p>
+      </div>
+      <a href="#" class="btn-primary">{{volunteer_donate_cta}}</a>
+    </div>
+  </section>
+
+  <!-- ==================== SUCCESS POPUP ==================== -->
+  <div id="success-popup" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" aria-hidden="true" role="dialog" aria-modal="true">
+    <div id="popup-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center z-10">
+      <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+        <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-2">{{popup_title}}</h3>
+      <p class="text-gray-600 mb-2">{{popup_text}}</p>
+      <p class="text-gray-400 text-sm mb-6">{{popup_subtext}}</p>
+      <button id="popup-close" class="btn-outline">{{popup_close}}</button>
+    </div>
+  </div>
+
+  {{> footer}}
+
+  <script src="/js/main.js"></script>
+
+  <!-- Populate select options from translation string -->
+  <script>
+    (function() {
+      const opts = "{{volunteer_form_area_options}}".split('|');
+      const sel = document.getElementById('v-area');
+      if (sel) {
+        opts.forEach((label, i) => {
+          const opt = document.createElement('option');
+          opt.value = i === 0 ? '' : label;
+          opt.textContent = label;
+          if (i === 0) opt.disabled = true, opt.selected = true;
+          sel.appendChild(opt);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

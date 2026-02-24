@@ -55,4 +55,13 @@
   .input-label {
     @apply block text-sm font-medium text-gray-700 mb-1.5;
   }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
