@@ -1,0 +1,67 @@
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+
+      <!-- Logo left: HST -->
+      <a href="{{link_home}}" class="flex-shrink-0" aria-label="HST – Hochschultage">
+        <div class="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/30">
+          <span class="text-white font-bold text-sm md:text-base">HST</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="{{link_home}}#programm" class="text-white/90 hover:text-white text-sm font-medium transition-colors">{{nav_program}}</a>
+        <a href="{{link_home}}#ueber-uns" class="text-white/90 hover:text-white text-sm font-medium transition-colors">{{nav_about}}</a>
+        <a href="{{link_home}}#kontakt" class="text-white/90 hover:text-white text-sm font-medium transition-colors">{{nav_contact}}</a>
+        <a href="{{link_volunteer}}" class="text-white/90 hover:text-white text-sm font-medium transition-colors">{{nav_volunteer_page}}</a>
+        <a href="{{hero_cta_link}}" class="btn-primary text-sm !py-2 !px-4">{{nav_volunteer}}</a>
+
+        <!-- Language switcher -->
+        <button
+          data-set-lang="{{alt_lang}}"
+          data-lang-target="{{alt_link_home}}"
+          class="text-white/70 hover:text-white text-sm font-medium transition-colors border border-white/30 rounded-md px-2.5 py-1"
+          aria-label="Switch to {{alt_lang_name}}"
+        >{{alt_lang_name}}</button>
+      </div>
+
+      <!-- Logo right: YAU -->
+      <a href="#" class="hidden md:flex flex-shrink-0" aria-label="YAU – Youth Alive United">
+        <div class="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/30">
+          <span class="text-white font-bold text-sm md:text-base">YAU</span>
+        </div>
+      </a>
+
+      <!-- Mobile: language + hamburger -->
+      <div class="flex items-center gap-3 md:hidden">
+        <button
+          data-set-lang="{{alt_lang}}"
+          data-lang-target="{{alt_link_home}}"
+          class="text-white/70 hover:text-white text-xs font-medium border border-white/30 rounded-md px-2 py-1"
+          aria-label="Switch to {{alt_lang_name}}"
+        >{{alt_lang_name}}</button>
+        <button id="mobile-menu-btn" class="text-white p-1" aria-label="Menu" aria-expanded="false">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-2 bg-primary-dark/95 backdrop-blur-sm rounded-xl p-4 mt-1 border border-white/10">
+        <a href="{{link_home}}#programm" class="text-white/90 hover:text-white py-2 text-sm font-medium">{{nav_program}}</a>
+        <a href="{{link_home}}#ueber-uns" class="text-white/90 hover:text-white py-2 text-sm font-medium">{{nav_about}}</a>
+        <a href="{{link_home}}#kontakt" class="text-white/90 hover:text-white py-2 text-sm font-medium">{{nav_contact}}</a>
+        <a href="{{link_volunteer}}" class="text-white/90 hover:text-white py-2 text-sm font-medium">{{nav_volunteer_page}}</a>
+        <hr class="border-white/10 my-1">
+        <a href="{{hero_cta_link}}" class="btn-primary text-sm text-center">{{nav_volunteer}}</a>
+      </div>
+    </div>
+  </div>
+</nav>

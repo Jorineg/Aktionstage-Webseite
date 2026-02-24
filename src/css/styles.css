@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a365d;
+  --color-primary-light: #2b5ea7;
+  --color-primary-dark: #0f2440;
+  --color-accent: #e8a838;
+  --color-accent-hover: #d49530;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #1e293b;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-accent text-primary-dark font-semibold rounded-lg
+           hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2
+           transition-colors duration-200 text-sm md:text-base;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg
+           hover:bg-white hover:text-primary-dark focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary
+           transition-colors duration-200 text-sm md:text-base;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg
+           hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
+           transition-colors duration-200 text-sm md:text-base;
+  }
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
+  }
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900
+           placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent
+           transition-all duration-200 text-sm md:text-base;
+  }
+  .input-label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5;
+  }
+}
