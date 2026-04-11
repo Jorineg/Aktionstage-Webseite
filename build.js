@@ -13,12 +13,6 @@ const PAGES = [
     id: 'home'
   },
   {
-    template: 'src/pages/mitarbeit.html',
-    output: { de: 'mitarbeit/index.html', en: 'en/volunteer/index.html' },
-    canonical: { de: '/mitarbeit/', en: '/en/volunteer/' },
-    id: 'volunteer'
-  },
-  {
     template: 'src/pages/impressum.html',
     output: { de: 'impressum/index.html', en: 'en/imprint/index.html' },
     canonical: { de: '/impressum/', en: '/en/imprint/' },

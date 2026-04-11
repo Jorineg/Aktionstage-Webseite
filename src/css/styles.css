@@ -1,14 +1,50 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Artegra Sans';
+  src: url('/fonts/ArtegraSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Artegra Sans';
+  src: url('/fonts/ArtegraSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Artegra Sans';
+  src: url('/fonts/ArtegraSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'More Sugar';
+  src: url('/fonts/MoreSugarRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-primary: #1a365d;
-  --color-primary-light: #2b5ea7;
-  --color-primary-dark: #0f2440;
-  --color-accent: #e8a838;
-  --color-accent-hover: #d49530;
-  --color-surface: #f8fafc;
-  --color-surface-dark: #1e293b;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #ff914d;
+  --color-primary-hover: #e87a2e;
+  --color-secondary: #c72a09;
+  --color-pink: #f4c8ff;
+  --color-pink-dark: #e9a8f7;
+  --color-cream: #eeebe3;
+  --color-surface: #eeebe3;
+  --color-text: #1a1a1a;
+  --color-text-muted: #555555;
+  --font-sans: 'Artegra Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'More Sugar', cursive;
 }
 
 @layer base {
@@ -17,26 +53,33 @@
   }
   body {
     font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-text);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-accent text-primary-dark font-semibold rounded-lg
-           hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2
-           transition-colors duration-200 text-sm md:text-base;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-full
+           hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
+           transition-all duration-200 text-sm md:text-base shadow-md hover:shadow-lg;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg
-           hover:bg-white hover:text-primary-dark focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary
-           transition-colors duration-200 text-sm md:text-base;
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-text/30 text-text font-semibold rounded-full
+           hover:bg-text hover:text-white hover:border-text focus:outline-none focus:ring-2 focus:ring-text focus:ring-offset-2
+           transition-all duration-200 text-sm md:text-base;
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full
            hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
-           transition-colors duration-200 text-sm md:text-base;
+           transition-all duration-200 text-sm md:text-base;
+  }
+  .btn-white {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-text font-semibold rounded-full
+           hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
+           transition-all duration-200 text-sm md:text-base shadow-md;
   }
   .section-padding {
     @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
@@ -45,15 +88,18 @@
     @apply max-w-6xl mx-auto;
   }
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200;
   }
   .input-field {
-    @apply w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900
-           placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-text
+           placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
            transition-all duration-200 text-sm md:text-base;
   }
   .input-label {
-    @apply block text-sm font-medium text-gray-700 mb-1.5;
+    @apply block text-sm font-medium mb-1.5;
+  }
+  .font-display {
+    font-family: var(--font-display);
   }
   .reveal {
     opacity: 0;

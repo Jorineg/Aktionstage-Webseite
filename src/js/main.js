@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('hidden');
       menuIcon.classList.toggle('hidden');
       closeIcon.classList.toggle('hidden');
     });
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (nav) {
     const updateNav = () => {
       if (window.scrollY > 60) {
-        nav.classList.add('bg-primary-dark/95', 'shadow-lg', 'backdrop-blur-sm');
+        nav.classList.add('bg-white/95', 'shadow-lg', 'backdrop-blur-sm');
         nav.classList.remove('bg-transparent');
       } else {
-        nav.classList.remove('bg-primary-dark/95', 'shadow-lg', 'backdrop-blur-sm');
+        nav.classList.remove('bg-white/95', 'shadow-lg', 'backdrop-blur-sm');
         nav.classList.add('bg-transparent');
       }
     };
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Form submission via Web3Forms (AJAX to show popup instead of redirect) ---
+  // --- Form submission via Web3Forms ---
   const popup = document.getElementById('success-popup');
   const popupClose = document.getElementById('popup-close');
   const popupOverlay = document.getElementById('popup-overlay');
@@ -105,9 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const contactForm = document.getElementById('contact-form');
   if (contactForm) contactForm.addEventListener('submit', handleFormSubmit);
-
-  const volunteerForm = document.getElementById('volunteer-form');
-  if (volunteerForm) volunteerForm.addEventListener('submit', handleFormSubmit);
 
   if (popupClose) popupClose.addEventListener('click', closePopup);
   if (popupOverlay) popupOverlay.addEventListener('click', closePopup);

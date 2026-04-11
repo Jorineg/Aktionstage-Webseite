@@ -4,3 +4,6 @@ dist/
 .DS_Store
 .vercel
 .env*.local
+CD
+docs
+package-lock.json
