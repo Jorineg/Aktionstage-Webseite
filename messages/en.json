@@ -86,6 +86,7 @@
   "program_day5_event1_title": "Joint Closing",
   "program_day5_event1_desc": "Worship evening, gratitude, prayer",
 
+  "program_org_prefix": "with",
   "program_unis_title": "Participating Universities",
   "program_uni_tu": "TU Berlin",
   "program_uni_hu": "HU / Charité",
@@ -106,7 +107,7 @@
   "org_smd_link": "https://smd.berlin",
   "org_cc_name": "Campus Connect",
   "org_cc_desc": "by Campus für Christus",
-  "org_cc_link": "https://campus-connect.de",
+  "org_cc_link": "https://www.campus-connect.de/berlin/",
   "org_cvjm_name": "CVJM Berlin",
   "org_cvjm_link": "https://cvjm-berlin.de",
   "org_gfb_name": "Gemeinsam für Berlin",
