@@ -117,7 +117,7 @@
     display: grid;
     grid-template-columns: repeat(5, 14rem);
     gap: 0.5rem;
-    align-items: start;
+    align-items: stretch;
   }
   @media (min-width: 1024px) {
     .program-grid {
@@ -126,15 +126,9 @@
   }
   .program-row {
     cursor: default;
-    position: relative;
-    z-index: 1;
-  }
-  .program-row:hover {
-    z-index: 30;
   }
   .program-row > :first-child {
     transition: background-color 0.15s ease;
-    border-radius: inherit;
   }
   .program-row:hover > :first-child {
     background-color: color-mix(in srgb, var(--color-primary) 5%, transparent);
@@ -143,26 +137,14 @@
     background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   }
   .program-detail {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transform: translateY(-2px);
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
   }
   .program-row:hover .program-detail {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    grid-template-rows: 1fr;
   }
   .program-detail > div {
-    background: white;
-    border-radius: 0 0 0.75rem 0.75rem;
-    border: 1px solid rgb(229, 231, 235);
-    border-top: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
   }
   .hero-landmarks {
@@ -176,16 +158,7 @@
   }
   @media (hover: none) {
     .program-detail {
-      position: static;
-      opacity: 1;
-      transform: none;
-      pointer-events: auto;
-    }
-    .program-detail > div {
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
+      grid-template-rows: 1fr;
     }
   }
 }
