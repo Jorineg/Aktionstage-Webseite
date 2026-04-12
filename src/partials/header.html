@@ -2,9 +2,25 @@
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
 
-      <a href="{{link_home}}" class="flex-shrink-0" aria-label="Aktionstage Berlin">
-        <img src="/images/aktionstage-logo.png" alt="Aktionstage" class="w-10 h-10 md:w-12 md:h-12" width="512" height="512">
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="{{link_home}}" class="flex-shrink-0" aria-label="Aktionstage Berlin">
+          <img src="/images/aktionstage-logo.png" alt="Aktionstage" class="w-10 h-10 md:w-12 md:h-12" width="512" height="512">
+        </a>
+        <div class="hidden sm:flex items-center gap-4 md:gap-5 header-logos">
+          <a href="{{org_smd_link}}" target="_blank" rel="noopener noreferrer" aria-label="Hochschul-SMD Berlin">
+            <img src="/images/logos/smd-berlin.png" alt="Hochschul-SMD Berlin" class="h-3 md:h-3.5 w-auto">
+          </a>
+          <a href="{{org_cvjm_link}}" target="_blank" rel="noopener noreferrer" aria-label="CVJM Berlin">
+            <img src="/images/logos/cvjm-berlin.svg" alt="CVJM Berlin" class="h-6 md:h-7 w-auto">
+          </a>
+          <a href="{{org_cc_link}}" target="_blank" rel="noopener noreferrer" aria-label="Campus Connect">
+            <img src="/images/logos/campus-connect.png" alt="Campus Connect" class="h-6 md:h-7 w-auto">
+          </a>
+          <a href="{{org_sfc_link}}" target="_blank" rel="noopener noreferrer" aria-label="SfC">
+            <img src="/images/logos/sfc.png" alt="SfC" class="h-6 md:h-7 w-auto">
+          </a>
+        </div>
+      </div>
 
       <div class="hidden md:flex items-center gap-6 lg:gap-8">
         <a href="{{link_home}}#program" class="text-text/80 hover:text-text text-sm font-medium transition-colors">{{nav_program}}</a>

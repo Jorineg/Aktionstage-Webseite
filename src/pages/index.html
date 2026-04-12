@@ -23,13 +23,13 @@
   {{> header}}
 
   <!-- ==================== HERO ==================== -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-pink">
+  <section id="hero" class="relative h-screen flex flex-col overflow-hidden bg-pink">
     <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-32 -left-32 w-80 h-80 bg-white/30 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="relative z-10 text-center px-4 md:px-8 max-w-5xl mx-auto pt-24 pb-16">
+    <div class="relative z-10 text-center px-4 md:px-8 max-w-5xl mx-auto pt-24 pb-4 flex-shrink-0">
       <div class="mb-8">
         <img src="/images/aktionstage-logo.png" alt="Aktionstage Logo" class="w-24 h-24 md:w-32 md:h-32 mx-auto drop-shadow-md" width="512" height="512">
       </div>
@@ -39,20 +39,24 @@
       <p class="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl text-text mb-3 px-2">
         {{hero_subtitle}}
       </p>
-      <p class="text-lg md:text-xl text-text-muted font-medium mb-10">
+      <p class="text-lg md:text-xl text-text-muted font-medium mb-7">
         {{hero_date}}
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="{{hero_cta_link}}" target="_blank" rel="noopener noreferrer" class="btn-primary text-base md:text-lg !px-8 !py-4">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="{{hero_cta_link}}" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm md:text-base !px-6 !py-3">
           {{hero_cta}}
         </a>
-        <a href="{{hero_program_link}}" class="btn-secondary text-base md:text-lg !px-8 !py-4">
+        <a href="{{hero_program_link}}" class="btn-secondary text-sm md:text-base !px-6 !py-3 sm:ml-3">
           {{hero_program_cta}}
         </a>
       </div>
     </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-text/25 animate-bounce">
+    <div class="absolute bottom-0 left-0 right-0 z-0 pointer-events-none">
+      <img id="hero-landmarks" src="/images/berlin-landmarks.png" alt="" class="hero-landmarks" aria-hidden="true">
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-text/25 animate-bounce z-20">
       <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
       </svg>
@@ -90,169 +94,196 @@
         </span>
       </div>
 
-      <div class="space-y-5">
-        <!-- Day 1: Montag -->
-        <div class="reveal">
-          <div class="card !p-0 overflow-hidden">
-            <div class="bg-primary px-5 py-3 flex items-baseline gap-2">
-              <h3 class="text-white font-bold text-lg">{{program_day1_title}}</h3>
-              <span class="text-white font-medium text-base">· {{program_day1_date}}</span>
-            </div>
-            <div class="p-5">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day1_event1_time}}</span>
-                <h4 class="font-semibold">{{program_day1_event1_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day1_event1_desc}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 2: Dienstag -->
-        <div class="reveal">
-          <div class="card !p-0 overflow-hidden">
-            <div class="bg-primary px-5 py-3 flex items-baseline gap-2">
-              <h3 class="text-white font-bold text-lg">{{program_day2_title}}</h3>
-              <span class="text-white font-medium text-base">· {{program_day2_date}}</span>
-            </div>
-            <div class="p-5 space-y-4">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-text-muted text-sm">{{program_day2_event1_time}}</span>
-                <h4 class="font-semibold text-text-muted">{{program_day2_event1_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day2_event1_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day2_event2_time}}</span>
-                <h4 class="font-semibold">{{program_day2_event2_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day2_event2_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day2_event3_time}}</span>
-                <div>
-                  <h4 class="font-semibold">{{program_day2_event3_title}}</h4>
-                  <p class="text-sm text-text-muted mt-0.5">{{program_day2_event3_desc}}</p>
-                  <span class="inline-flex items-center gap-1 mt-1.5 text-xs text-text-muted italic">{{program_org_prefix}} {{program_day2_event3_org}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 3: Mittwoch -->
-        <div class="reveal">
-          <div class="card !p-0 overflow-hidden">
-            <div class="bg-primary px-5 py-3 flex items-baseline gap-2">
-              <h3 class="text-white font-bold text-lg">{{program_day3_title}}</h3>
-              <span class="text-white font-medium text-base">· {{program_day3_date}}</span>
-            </div>
-            <div class="p-5 space-y-4">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-text-muted text-sm">{{program_day3_event1_time}}</span>
-                <h4 class="font-semibold text-text-muted">{{program_day3_event1_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day3_event1_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day3_event2_time}}</span>
-                <h4 class="font-semibold">{{program_day3_event2_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day3_event2_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-text-muted text-sm">{{program_day3_event3_time}}</span>
-                <h4 class="font-semibold text-text-muted">{{program_day3_event3_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day3_event3_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day3_event4_time}}</span>
-                <div>
-                  <h4 class="font-semibold">{{program_day3_event4_title}}</h4>
-                  <p class="text-sm text-text-muted mt-0.5">{{program_day3_event4_desc}}</p>
-                  <span class="inline-flex items-center gap-1 mt-1.5 text-xs text-text-muted italic">{{program_org_prefix}} {{program_day3_event4_org}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 4: Donnerstag -->
-        <div class="reveal">
-          <div class="card !p-0 overflow-hidden">
-            <div class="bg-primary px-5 py-3 flex items-baseline gap-2">
-              <h3 class="text-white font-bold text-lg">{{program_day4_title}}</h3>
-              <span class="text-white font-medium text-base">· {{program_day4_date}}</span>
-            </div>
-            <div class="p-5 space-y-4">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-text-muted text-sm">{{program_day4_event1_time}}</span>
-                <h4 class="font-semibold text-text-muted">{{program_day4_event1_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day4_event1_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day4_event2_time}}</span>
-                <h4 class="font-semibold">{{program_day4_event2_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day4_event2_desc}}</p>
-              </div>
-              <hr class="border-gray-100">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-primary font-bold text-sm">{{program_day4_event3_time}}</span>
-                <div>
-                  <h4 class="font-semibold">{{program_day4_event3_title}}</h4>
-                  <p class="text-sm text-text-muted mt-0.5">{{program_day4_event3_desc}}</p>
-                  <span class="inline-flex items-center gap-1 mt-1.5 text-xs text-text-muted italic">{{program_org_prefix}} {{program_day4_event3_org}}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 5: Freitag/Samstag -->
-        <div class="reveal">
-          <div class="card !p-0 overflow-hidden">
-            <div class="bg-secondary px-5 py-3 flex items-baseline gap-2">
-              <h3 class="text-white font-bold text-lg">{{program_day5_title}}</h3>
-              <span class="text-white font-medium text-base">· {{program_day5_date}}</span>
-            </div>
-            <div class="p-5">
-              <div class="grid grid-cols-[7rem_1fr] sm:grid-cols-[8rem_1fr] gap-x-4 gap-y-0.5 items-baseline">
-                <span class="text-secondary font-bold text-sm">{{program_day5_event1_time}}</span>
-                <h4 class="font-semibold">{{program_day5_event1_title}}</h4>
-                <span></span>
-                <p class="text-sm text-text-muted">{{program_day5_event1_desc}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Participating Universities -->
-      <div class="mt-12 reveal">
-        <h3 class="text-xl font-bold text-text mb-4 text-center">{{program_unis_title}}</h3>
-        <div class="flex flex-wrap justify-center gap-2.5">
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_tu}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_hu}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_fu}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_htw}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_hwr}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_ehb}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_khb}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_ash}}</span>
-          <span class="bg-white px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_bht}}</span>
+      <div class="mb-8 reveal">
+        <h3 class="text-lg font-bold text-text mb-3 text-center">{{program_unis_title}}</h3>
+        <div class="flex flex-wrap justify-center gap-2">
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_tu}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_hu}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_fu}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_htw}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_hwr}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_ehb}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_khb}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_ash}}</span>
+          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_bht}}</span>
         </div>
-        <p class="text-center text-text-muted text-sm mt-4">{{program_unis_note}}</p>
+        <p class="text-center text-text-muted text-sm mt-3">{{program_unis_note}}</p>
       </div>
+
+      <div class="reveal">
+        <div class="overflow-x-auto -mx-4 px-4 pb-2 lg:overflow-visible lg:mx-0 lg:px-0 lg:pb-0">
+          <div class="program-grid">
+
+            <!-- ── Day Headers ── -->
+            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day1_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day1_date}}</span>
+            </div>
+            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day2_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day2_date}}</span>
+            </div>
+            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day3_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day3_date}}</span>
+            </div>
+            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day4_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day4_date}}</span>
+            </div>
+            <div class="bg-secondary rounded-xl px-2 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day5_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day5_date}}</span>
+            </div>
+
+            <!-- ── Row: 07:00 – 11:00 ── -->
+            <div></div>
+            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day2_event1_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day2_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day2_event1_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day3_event1_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day3_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event1_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day4_event1_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day4_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day4_event1_desc}}</p></div>
+              </div>
+            </div>
+            <div></div>
+
+            <!-- ── Row: 11:30 – 14:00 ── -->
+            <div></div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day2_event2_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day2_event2_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day2_event2_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day3_event2_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day3_event2_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day3_event2_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day4_event2_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day4_event2_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day4_event2_desc}}</p></div>
+              </div>
+            </div>
+            <div></div>
+
+            <!-- ── Row: 14:00 – 16:00 ── -->
+            <div></div>
+            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day2_event3_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day2_event3_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day2_event3_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day3_event3_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day3_event3_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event3_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day4_event3_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day4_event3_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day4_event3_desc}}</p></div>
+              </div>
+            </div>
+            <div></div>
+
+            <!-- ── Row: 19:00 (Abend) ── -->
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day1_event1_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day1_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day1_event1_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day2_event4_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day2_event4_title}}</h4>
+                <span class="text-[0.65rem] text-text-muted/60 italic">{{program_org_prefix}} {{program_day2_event4_org}}</span>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day2_event4_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day3_event4_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day3_event4_title}}</h4>
+                <span class="text-[0.65rem] text-text-muted/60 italic">{{program_org_prefix}} {{program_day3_event4_org}}</span>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day3_event4_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day4_event4_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day4_event4_title}}</h4>
+                <span class="text-[0.65rem] text-text-muted/60 italic">{{program_org_prefix}} {{program_day4_event4_org}}</span>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day4_event4_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row program-row--secondary bg-white rounded-xl shadow-sm border border-gray-100">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-secondary tabular-nums">{{program_day5_event1_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day5_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day5_event1_desc}}</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

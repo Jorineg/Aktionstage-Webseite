@@ -112,6 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closePopup();
   });
 
+  // --- Hero landmarks fade out on scroll ---
+  const heroLandmarks = document.getElementById('hero-landmarks');
+  const heroSection = document.getElementById('hero');
+  if (heroLandmarks && heroSection) {
+    const updateHeroFade = () => {
+      const scrollY = window.scrollY;
+      const fadeStart = 0;
+      const fadeEnd = heroSection.offsetHeight * 0.5;
+      const progress = Math.min(Math.max((scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
+      heroLandmarks.style.opacity = 1 - progress;
+      heroLandmarks.style.transform = `translateY(${progress * 40}px)`;
+    };
+    updateHeroFade();
+    window.addEventListener('scroll', updateHeroFade, { passive: true });
+  }
+
   // --- Smooth reveal on scroll ---
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length > 0) {
