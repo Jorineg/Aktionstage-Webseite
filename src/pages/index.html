@@ -112,34 +112,35 @@
       </div>
 
       <div class="reveal">
-        <div class="overflow-x-auto -mx-4 px-4 pb-2 lg:overflow-visible lg:mx-0 lg:px-0 lg:pb-0">
-          <div class="program-grid">
+        <div class="program-grid">
 
-            <!-- ── Day Headers ── -->
-            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
+          <!-- ── Day 1 (Montag) ── -->
+          <div class="program-day">
+            <div class="program-day-header bg-primary rounded-xl px-3 py-2.5 text-center">
               <h3 class="text-white font-bold text-sm">{{program_day1_title}}</h3>
               <span class="text-white/70 text-xs">{{program_day1_date}}</span>
             </div>
-            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
+            <div class="program-day-spacer"></div>
+            <div class="program-day-spacer"></div>
+            <div class="program-day-spacer"></div>
+            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day1_event1_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day1_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day1_event1_desc}}</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Day 2 (Dienstag) ── -->
+          <div class="program-day">
+            <div class="program-day-header bg-primary rounded-xl px-3 py-2.5 text-center">
               <h3 class="text-white font-bold text-sm">{{program_day2_title}}</h3>
               <span class="text-white/70 text-xs">{{program_day2_date}}</span>
             </div>
-            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
-              <h3 class="text-white font-bold text-sm">{{program_day3_title}}</h3>
-              <span class="text-white/70 text-xs">{{program_day3_date}}</span>
-            </div>
-            <div class="bg-primary rounded-xl px-2 py-2.5 text-center">
-              <h3 class="text-white font-bold text-sm">{{program_day4_title}}</h3>
-              <span class="text-white/70 text-xs">{{program_day4_date}}</span>
-            </div>
-            <div class="bg-secondary rounded-xl px-2 py-2.5 text-center">
-              <h3 class="text-white font-bold text-sm">{{program_day5_title}}</h3>
-              <span class="text-white/70 text-xs">{{program_day5_date}}</span>
-            </div>
-
-            <!-- ── Row: 07:00 – 11:00 ── -->
-            <div></div>
-            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="2">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="2" data-row-type="prep">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day2_event1_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day2_event1_title}}</h4>
@@ -148,29 +149,7 @@
                 <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day2_event1_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="3">
-              <div class="px-3 py-2 text-text-muted">
-                <span class="text-[0.65rem] tabular-nums">{{program_day3_event1_time}}</span>
-                <h4 class="text-xs mt-0.5">{{program_day3_event1_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event1_desc}}</p></div>
-              </div>
-            </div>
-            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="4">
-              <div class="px-3 py-2 text-text-muted">
-                <span class="text-[0.65rem] tabular-nums">{{program_day4_event1_time}}</span>
-                <h4 class="text-xs mt-0.5">{{program_day4_event1_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day4_event1_desc}}</p></div>
-              </div>
-            </div>
-            <div></div>
-
-            <!-- ── Row: 11:30 – 14:00 ── -->
-            <div></div>
-            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="2">
+            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="2" data-row-type="action">
               <div class="px-3 py-2.5">
                 <span class="text-xs font-semibold text-primary tabular-nums">{{program_day2_event2_time}}</span>
                 <h4 class="text-sm font-medium mt-0.5">{{program_day2_event2_title}}</h4>
@@ -179,65 +158,13 @@
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day2_event2_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="3">
-              <div class="px-3 py-2.5">
-                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day3_event2_time}}</span>
-                <h4 class="text-sm font-medium mt-0.5">{{program_day3_event2_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day3_event2_desc}}</p></div>
-              </div>
-            </div>
-            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="4">
-              <div class="px-3 py-2.5">
-                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day4_event2_time}}</span>
-                <h4 class="text-sm font-medium mt-0.5">{{program_day4_event2_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day4_event2_desc}}</p></div>
-              </div>
-            </div>
-            <div></div>
-
-            <!-- ── Row: 14:00 – 16:00 ── -->
-            <div></div>
-            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="2">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="2" data-row-type="cleanup">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day2_event3_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day2_event3_title}}</h4>
               </div>
               <div class="program-detail">
                 <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day2_event3_desc}}</p></div>
-              </div>
-            </div>
-            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="3">
-              <div class="px-3 py-2 text-text-muted">
-                <span class="text-[0.65rem] tabular-nums">{{program_day3_event3_time}}</span>
-                <h4 class="text-xs mt-0.5">{{program_day3_event3_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event3_desc}}</p></div>
-              </div>
-            </div>
-            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="4">
-              <div class="px-3 py-2 text-text-muted">
-                <span class="text-[0.65rem] tabular-nums">{{program_day4_event3_time}}</span>
-                <h4 class="text-xs mt-0.5">{{program_day4_event3_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day4_event3_desc}}</p></div>
-              </div>
-            </div>
-            <div></div>
-
-            <!-- ── Row: 19:00 (Abend) ── -->
-            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-              <div class="px-3 py-2.5">
-                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day1_event1_time}}</span>
-                <h4 class="text-sm font-medium mt-0.5">{{program_day1_event1_title}}</h4>
-              </div>
-              <div class="program-detail">
-                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day1_event1_desc}}</p></div>
               </div>
             </div>
             <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -250,6 +177,41 @@
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day2_event4_desc}}</p></div>
               </div>
             </div>
+          </div>
+
+          <!-- ── Day 3 (Mittwoch) ── -->
+          <div class="program-day">
+            <div class="program-day-header bg-primary rounded-xl px-3 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day3_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day3_date}}</span>
+            </div>
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="3" data-row-type="prep">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day3_event1_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day3_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event1_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="3" data-row-type="action">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day3_event2_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day3_event2_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day3_event2_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="3" data-row-type="cleanup">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day3_event3_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day3_event3_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event3_desc}}</p></div>
+              </div>
+            </div>
             <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
               <div class="px-3 py-2.5">
                 <span class="text-xs font-semibold text-primary tabular-nums">{{program_day3_event4_time}}</span>
@@ -258,6 +220,41 @@
               </div>
               <div class="program-detail">
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day3_event4_desc}}</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Day 4 (Donnerstag) ── -->
+          <div class="program-day">
+            <div class="program-day-header bg-primary rounded-xl px-3 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day4_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day4_date}}</span>
+            </div>
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="4" data-row-type="prep">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day4_event1_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day4_event1_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day4_event1_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="4" data-row-type="action">
+              <div class="px-3 py-2.5">
+                <span class="text-xs font-semibold text-primary tabular-nums">{{program_day4_event2_time}}</span>
+                <h4 class="text-sm font-medium mt-0.5">{{program_day4_event2_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day4_event2_desc}}</p></div>
+              </div>
+            </div>
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="4" data-row-type="cleanup">
+              <div class="px-3 py-2 text-text-muted">
+                <span class="text-[0.65rem] tabular-nums">{{program_day4_event3_time}}</span>
+                <h4 class="text-xs mt-0.5">{{program_day4_event3_title}}</h4>
+              </div>
+              <div class="program-detail">
+                <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day4_event3_desc}}</p></div>
               </div>
             </div>
             <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
@@ -270,6 +267,17 @@
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day4_event4_desc}}</p></div>
               </div>
             </div>
+          </div>
+
+          <!-- ── Day 5 (Freitag) ── -->
+          <div class="program-day">
+            <div class="program-day-header bg-secondary rounded-xl px-3 py-2.5 text-center">
+              <h3 class="text-white font-bold text-sm">{{program_day5_title}}</h3>
+              <span class="text-white/70 text-xs">{{program_day5_date}}</span>
+            </div>
+            <div class="program-day-spacer"></div>
+            <div class="program-day-spacer"></div>
+            <div class="program-day-spacer"></div>
             <div class="program-row program-row--secondary bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
               <div class="px-3 py-2.5">
                 <span class="text-xs font-semibold text-secondary tabular-nums">{{program_day5_event1_time}}</span>
@@ -279,8 +287,8 @@
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day5_event1_desc}}</p></div>
               </div>
             </div>
-
           </div>
+
         </div>
       </div>
 

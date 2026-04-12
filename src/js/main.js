@@ -141,26 +141,45 @@ document.addEventListener('DOMContentLoaded', () => {
     bht: [],
   };
 
+  const lang = document.documentElement.lang || 'de';
+  const rowLabels = {
+    de: { prep: 'Vorbereitung an der', action: 'Aktionen an der', cleanup: 'Aufräumaktion an der' },
+    en: { prep: 'Preparation at', action: 'Actions at', cleanup: 'Clean-up at' },
+  };
+
   let activeUni = null;
   const uniPills = document.querySelectorAll('.uni-pill');
   const filterableCells = document.querySelectorAll('[data-filterable]');
 
+  filterableCells.forEach(cell => {
+    const h4 = cell.querySelector('h4');
+    if (h4) cell.dataset.originalTitle = h4.textContent;
+  });
+
   function applyUniFilter() {
-    if (!activeUni) {
-      filterableCells.forEach(cell => {
-        cell.classList.remove('cell-dimmed', 'cell-highlighted');
-      });
-      return;
-    }
-    const activeDays = uniSchedule[activeUni] || [];
+    const activePill = activeUni ? document.querySelector(`.uni-pill[data-uni="${activeUni}"]`) : null;
+    const uniName = activePill ? activePill.textContent.trim() : '';
+    const labels = rowLabels[lang] || rowLabels.de;
+
     filterableCells.forEach(cell => {
+      const h4 = cell.querySelector('h4');
+      if (!activeUni) {
+        cell.classList.remove('cell-dimmed', 'cell-highlighted');
+        if (h4 && cell.dataset.originalTitle) h4.textContent = cell.dataset.originalTitle;
+        return;
+      }
+      const activeDays = uniSchedule[activeUni] || [];
       const day = cell.dataset.day;
       if (activeDays.includes(day)) {
         cell.classList.remove('cell-dimmed');
         cell.classList.add('cell-highlighted');
+        if (h4 && cell.dataset.rowType) {
+          h4.textContent = `${labels[cell.dataset.rowType]} ${uniName}`;
+        }
       } else {
         cell.classList.remove('cell-highlighted');
         cell.classList.add('cell-dimmed');
+        if (h4 && cell.dataset.originalTitle) h4.textContent = cell.dataset.originalTitle;
       }
     });
   }
