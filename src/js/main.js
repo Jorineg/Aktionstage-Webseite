@@ -185,7 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   uniPills.forEach(pill => {
-    pill.addEventListener('click', () => {
+    pill.addEventListener('click', (e) => {
+      e.stopPropagation();
       const uni = pill.dataset.uni;
       if (activeUni === uni) {
         activeUni = null;
@@ -197,6 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       applyUniFilter();
     });
+  });
+
+  document.addEventListener('click', () => {
+    if (!activeUni) return;
+    activeUni = null;
+    uniPills.forEach(p => p.classList.remove('active'));
+    applyUniFilter();
   });
 
   // --- Smooth reveal on scroll ---
