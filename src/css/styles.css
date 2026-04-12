@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  background-color: var(--color-pink);
+}
+
 @font-face {
   font-family: 'Artegra Sans';
   src: url('/fonts/ArtegraSans-Regular.woff2') format('woff2');
@@ -123,6 +127,25 @@
     .program-grid {
       grid-template-columns: repeat(5, 1fr);
     }
+  }
+  .uni-pill {
+    @apply bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100
+           cursor-pointer transition-all duration-200;
+  }
+  .uni-pill:hover {
+    @apply bg-pink/50 border-pink-dark/50;
+  }
+  .uni-pill.active {
+    @apply bg-pink border-pink-dark text-text;
+  }
+  .filterable-cell {
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+  }
+  .cell-dimmed {
+    opacity: 0.15;
+  }
+  .cell-highlighted {
+    background-color: var(--color-pink) !important;
   }
   .program-row {
     cursor: default;

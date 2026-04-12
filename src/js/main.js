@@ -128,6 +128,58 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeroFade, { passive: true });
   }
 
+  // --- Uni filter for program grid ---
+  const uniSchedule = {
+    tu:  ['2', '3', '4'],
+    hu:  ['2', '3', '4'],
+    fu:  ['2', '3', '4'],
+    htw: ['2'],
+    hwr: ['3'],
+    ehb: ['2', '4'],
+    khb: [],
+    ash: [],
+    bht: [],
+  };
+
+  let activeUni = null;
+  const uniPills = document.querySelectorAll('.uni-pill');
+  const filterableCells = document.querySelectorAll('[data-filterable]');
+
+  function applyUniFilter() {
+    if (!activeUni) {
+      filterableCells.forEach(cell => {
+        cell.classList.remove('cell-dimmed', 'cell-highlighted');
+      });
+      return;
+    }
+    const activeDays = uniSchedule[activeUni] || [];
+    filterableCells.forEach(cell => {
+      const day = cell.dataset.day;
+      if (activeDays.includes(day)) {
+        cell.classList.remove('cell-dimmed');
+        cell.classList.add('cell-highlighted');
+      } else {
+        cell.classList.remove('cell-highlighted');
+        cell.classList.add('cell-dimmed');
+      }
+    });
+  }
+
+  uniPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const uni = pill.dataset.uni;
+      if (activeUni === uni) {
+        activeUni = null;
+        pill.classList.remove('active');
+      } else {
+        uniPills.forEach(p => p.classList.remove('active'));
+        activeUni = uni;
+        pill.classList.add('active');
+      }
+      applyUniFilter();
+    });
+  });
+
   // --- Smooth reveal on scroll ---
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length > 0) {

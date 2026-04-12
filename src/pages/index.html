@@ -98,15 +98,15 @@
       <div class="mb-8 reveal">
         <h3 class="text-lg font-bold text-text mb-3 text-center">{{program_unis_title}}</h3>
         <div class="flex flex-wrap justify-center gap-2">
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_tu}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_hu}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_fu}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_htw}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_hwr}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_ehb}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_khb}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_ash}}</span>
-          <span class="bg-white px-3.5 py-1.5 rounded-full text-sm font-medium shadow-sm border border-gray-100">{{program_uni_bht}}</span>
+          <button data-uni="tu" class="uni-pill">{{program_uni_tu}}</button>
+          <button data-uni="hu" class="uni-pill">{{program_uni_hu}}</button>
+          <button data-uni="fu" class="uni-pill">{{program_uni_fu}}</button>
+          <button data-uni="htw" class="uni-pill">{{program_uni_htw}}</button>
+          <button data-uni="hwr" class="uni-pill">{{program_uni_hwr}}</button>
+          <button data-uni="ehb" class="uni-pill">{{program_uni_ehb}}</button>
+          <button data-uni="khb" class="uni-pill">{{program_uni_khb}}</button>
+          <button data-uni="ash" class="uni-pill">{{program_uni_ash}}</button>
+          <button data-uni="bht" class="uni-pill">{{program_uni_bht}}</button>
         </div>
         <p class="text-center text-text-muted text-sm mt-3">{{program_unis_note}}</p>
       </div>
@@ -139,7 +139,7 @@
 
             <!-- ── Row: 07:00 – 11:00 ── -->
             <div></div>
-            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="2">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day2_event1_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day2_event1_title}}</h4>
@@ -148,7 +148,7 @@
                 <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day2_event1_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="3">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day3_event1_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day3_event1_title}}</h4>
@@ -157,7 +157,7 @@
                 <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event1_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="4">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day4_event1_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day4_event1_title}}</h4>
@@ -170,7 +170,7 @@
 
             <!-- ── Row: 11:30 – 14:00 ── -->
             <div></div>
-            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="2">
               <div class="px-3 py-2.5">
                 <span class="text-xs font-semibold text-primary tabular-nums">{{program_day2_event2_time}}</span>
                 <h4 class="text-sm font-medium mt-0.5">{{program_day2_event2_title}}</h4>
@@ -179,7 +179,7 @@
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day2_event2_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="3">
               <div class="px-3 py-2.5">
                 <span class="text-xs font-semibold text-primary tabular-nums">{{program_day3_event2_time}}</span>
                 <h4 class="text-sm font-medium mt-0.5">{{program_day3_event2_title}}</h4>
@@ -188,7 +188,7 @@
                 <div><p class="px-3 py-2.5 text-xs text-text-muted">{{program_day3_event2_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <div class="program-row filterable-cell bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-filterable data-day="4">
               <div class="px-3 py-2.5">
                 <span class="text-xs font-semibold text-primary tabular-nums">{{program_day4_event2_time}}</span>
                 <h4 class="text-sm font-medium mt-0.5">{{program_day4_event2_title}}</h4>
@@ -201,7 +201,7 @@
 
             <!-- ── Row: 14:00 – 16:00 ── -->
             <div></div>
-            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="2">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day2_event3_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day2_event3_title}}</h4>
@@ -210,7 +210,7 @@
                 <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day2_event3_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="3">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day3_event3_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day3_event3_title}}</h4>
@@ -219,7 +219,7 @@
                 <div><p class="px-3 py-2 text-[0.65rem] text-text-muted/70">{{program_day3_event3_desc}}</p></div>
               </div>
             </div>
-            <div class="program-row bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden">
+            <div class="program-row filterable-cell bg-white/60 rounded-xl border border-gray-100/50 overflow-hidden" data-filterable data-day="4">
               <div class="px-3 py-2 text-text-muted">
                 <span class="text-[0.65rem] tabular-nums">{{program_day4_event3_time}}</span>
                 <h4 class="text-xs mt-0.5">{{program_day4_event3_title}}</h4>
